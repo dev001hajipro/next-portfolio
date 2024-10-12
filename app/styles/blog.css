@@ -27,7 +27,7 @@
 .linkButton:hover {
     opacity: 0.8;
 }
-
+/*
 .blogImg {
     height: 300px;
 }
@@ -37,6 +37,7 @@
     width: 100%;
     object-fit: cover;
 }
+    */
 
 /* Pagination */
 .paginationWrapper {

@@ -5,17 +5,37 @@ const Footer = () => {
   return (
     <footer>
       <a href="https://www.google.com/">
-        <Image src="/images/github.svg" alt="logo" />
+        <Image
+          src="/images/github.svg"
+          alt="github"
+          width={72}
+          height={72}
+        />
       </a>
 
       <a href="https://www.google.com/">
-        <Image src="/images/linkedin.svg" alt="logo" />
+        <Image
+          src="/images/linkedin.svg"
+          alt="linkedin"
+          width={72}
+          height={72}
+        />
       </a>
       <a href="https://www.google.com/">
-        <Image src="/images/twitter.svg" alt="logo" />
+        <Image
+          src="/images/twitter.svg"
+          alt="x"
+          width={72}
+          height={72}
+        />
       </a>
       <a href="https://www.google.com/">
-        <Image src="/images/facebook.svg" alt="logo" />
+        <Image
+          src="/images/facebook.svg"
+          alt="facebook"
+          width={72}
+          height={72}
+        />
       </a>
       <hr />
       <Link href="/blog">Blog</Link>
