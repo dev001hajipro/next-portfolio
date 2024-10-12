@@ -4,17 +4,20 @@ import path from "path";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
-async function getSingleBlog(context) {
-  const { slug } = context.params;
-  const data = await import(`../../../data/${slug}.md`);
+async function getSingleBlog(id: string) {
+  const data = await import(`../../../data/${id}.md`);
   const singleDocument = matter(data.default);
   return {
     singleDocument: singleDocument,
   };
 }
 
-const SingleBlog = async (props) => {
-  const { singleDocument } = await getSingleBlog(props);
+export default async function SingleBlog({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { singleDocument } = await getSingleBlog(params.slug);
   return (
     <>
       <div className="img-container">
@@ -36,9 +39,7 @@ const SingleBlog = async (props) => {
       </div>
     </>
   );
-};
-
-export default SingleBlog;
+}
 
 async function getAllBlogs() {
   const files = fs.readdirSync(path.join("data"));

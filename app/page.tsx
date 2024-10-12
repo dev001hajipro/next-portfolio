@@ -19,7 +19,7 @@ const Index = () => {
             <h2>JavaScript Nerd</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book. It has
               survived not only five centuries, but also the leap into
@@ -38,19 +38,19 @@ const Index = () => {
           <h2>Skills</h2>
           <div className="skillsContainer">
             <div>
-              <img src="/images/javascript.svg" alt="javascript" />
+              <Image src="/images/javascript.svg" alt="javascript" />
               <span>JavaScript / 10 years</span>
             </div>
             <div>
-              <img src="/images/react.svg" alt="react" />
+              <Image src="/images/react.svg" alt="react" />
               <span>React / 10 years</span>
             </div>
             <div>
-              <img src="/images/gatsby.svg" alt="gatsby" />
+              <Image src="/images/gatsby.svg" alt="gatsby" />
               <span>Gatsby / 10 years</span>
             </div>
             <div>
-              <img src="/images/next.svg" alt="next" />
+              <Image src="/images/next.svg" alt="next" />
               <span>Next.JS / 10 years</span>
             </div>
           </div>
