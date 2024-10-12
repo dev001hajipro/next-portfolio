@@ -1,3 +1,8 @@
+
+export const metadata = {
+  title: "Contact",
+  description: "Next.jsアプリ",
+}
 const Contact = () => {
   return (
     <>
