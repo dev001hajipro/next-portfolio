@@ -1,95 +1,66 @@
+import Link from "next/link";
 import Image from "next/image";
-import styles from "./page.module.css";
+import heroPic from "../public/images/index-hero.jpg";
+import profilePic from "../public/images/profile.jpg";
 
-export default function Home() {
+const Index = () => {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="hero">
+        <Image src={heroPic} alt="hero" />
+        <div className="textContainer">
+          <h1>I am Abe Hiroki</h1>
+          <h3>エンジニア</h3>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+      <div className="container">
+        <div className="profile">
+          <div>
+            <h2>JavaScript Nerd</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
+          </div>
+          <div>
+            <Image src={profilePic} alt="hero" />
+          </div>
+        </div>
+        <div className="skills">
+          <h2>Skills</h2>
+          <div className="skillsContainer">
+            <div>
+              <img src="/images/javascript.svg" alt="javascript" />
+              <span>JavaScript / 10 years</span>
+            </div>
+            <div>
+              <img src="/images/react.svg" alt="react" />
+              <span>React / 10 years</span>
+            </div>
+            <div>
+              <img src="/images/gatsby.svg" alt="gatsby" />
+              <span>Gatsby / 10 years</span>
+            </div>
+            <div>
+              <img src="/images/next.svg" alt="next" />
+              <span>Next.JS / 10 years</span>
+            </div>
+          </div>
+        </div>
+        <div className="ctaButton">
+          <Link href="/contact">Make It Happen!</Link>
+        </div>
+      </div>
+    </>
   );
-}
+};
+
+export default Index;
