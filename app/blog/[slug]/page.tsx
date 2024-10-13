@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
-import { getAllBlogs, getSingleBlog } from "@/app/utils/mdQueries";
+import { getAllBlogs, getSingleBlog } from "@/app/utils/MarkdownQueries";
 import PreviousNextButton from "@/app/components/PreviousNextButton";
 
 export async function generateMetadata({
@@ -22,8 +22,12 @@ export default async function SingleBlog({
 }) {
   const { singleDocument } = await getSingleBlog(params.slug);
   const { blogs } = await getAllBlogs();
-  const prevBlog = blogs.filter((blog) => blog.frontmatter.id === singleDocument.data.id -1)
-  const nextBlog = blogs.filter((blog) => blog.frontmatter.id === singleDocument.data.id +1)
+  const prevBlog = blogs.filter(
+    (blog) => blog.frontmatter.id === singleDocument.data.id - 1
+  );
+  const nextBlog = blogs.filter(
+    (blog) => blog.frontmatter.id === singleDocument.data.id + 1
+  );
   return (
     <>
       <div className="img-container">

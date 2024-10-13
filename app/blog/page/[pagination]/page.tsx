@@ -8,9 +8,14 @@ export const metadata = {
   description: "ブログページ",
 };
 
-const Blog = async () => {
+
+const Blog = async ({ params }: { params: { pagination: number } }) => {
   const { blogs, pageCount } = await getAllBlogs();
-  const limitedBlogs = blogs.slice(0, ITEMS_PER_PAGE);
+  const currentPage = params.pagination
+  const limitedBlogs = blogs.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
   return (
     <>
       <div className="wrapper">
@@ -38,6 +43,7 @@ const Blog = async () => {
             </div>
           ))}
         </div>
+
         <Pagination pageCount={pageCount} />
       </div>
     </>
@@ -45,3 +51,10 @@ const Blog = async () => {
 };
 export default Blog;
 
+export async function generateStaticParams() {
+  const { pageCount } = await getAllBlogs();
+  return Array.from(
+    { length: pageCount },
+    (_, index) => `/blog/page/${index + 2}`
+  );
+}
